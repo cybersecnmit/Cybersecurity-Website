@@ -5,6 +5,7 @@ import sujayImg from "../pics/team/sujay.jpeg";
 import ahmedImg from "../pics/team/ahmed.jpeg";
 import shravaniImg from "../pics/team/shravani.jpeg";
 import bhaveshImg from "../pics/team/bhavesh.jpeg";
+import achyuthImg from "../pics/team/achyuth.jpeg";
 
 const Team = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,7 +37,7 @@ const Team = () => {
     },
     {
       id: 2,
-      name: "Syed Ahmed",
+      name: "Ahmed Syed",
       role: "Vice President",
       image: ahmedImg,
     },
@@ -44,8 +45,7 @@ const Team = () => {
       id: 3,
       name: "Achyuth Hebbar",
       role: "Tech Lead",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop",
+      image: achyuthImg,
     },
     {
       id: 4,
@@ -67,7 +67,7 @@ const Team = () => {
     },
     {
       id: 7,
-      name: "Shravani S",
+      name: "Shravani K",
       role: "Design Lead",
       image: shravaniImg,
     },

@@ -1,9 +1,23 @@
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 import "../styles/particles.css";
 
 const BackgroundParticles = () => {
-  // Generate particles with random properties
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Generate particles with random properties (only on desktop)
   const particles = useMemo(() => {
+    if (isMobile) return [];
+    
     return Array.from({ length: 30 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
@@ -15,7 +29,7 @@ const BackgroundParticles = () => {
       angle: Math.random() * 360, // random direction
       opacity: Math.random() * 0.4 + 0.2, // 0.2 to 0.6
     }));
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="background-particles-wrapper">
